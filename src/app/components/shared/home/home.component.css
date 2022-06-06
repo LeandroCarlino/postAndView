@@ -1,0 +1,26 @@
+header {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: whitesmoke;
+    padding: 2em;
+    text-align: center;
+}
+
+main {
+    background-color: rgb(236, 229, 229);
+    margin-bottom: 0rem;
+    
+}
+
+
+footer {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,68,1) 60%, rgba(8,60,70,1) 97%);
+    padding: 0.5em;
+    text-align: center;
+    color: white;
+}
+
+footer p {  
+    margin-bottom: 0rem;
+}
