@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PostListComponent } from '../post-list/post-list.component';
 import { JsonDataService } from 'src/app/services/json-data.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { Post } from '../../interfaces/post.interface';
+import { CommentInterface } from 'src/app/interfaces/comment.interface';
 
 @Component({
   selector: 'app-post-detail',
@@ -10,16 +13,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostDetailComponent implements OnInit {
 
-  post: any;
+  post!: Post;
+  comment!: CommentInterface;
 
   constructor(private jsonDataService: JsonDataService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.jsonDataService.getPosts().subscribe(data => {
-      this.post = data;
-    })
-  }
-  
+    this.route.params
+    .pipe (
+      switchMap( ({id}) => this.jsonDataService.getPostId(id))
+    )
+    .subscribe( post => this.post = post);
 
+    this.route.params
+    .pipe (
+      switchMap( ({id}) => this.jsonDataService.getCommentId(id))
+    )
+    .subscribe( comment => this.comment = comment);
+    console.log(this.post.id)
+  };
+
+  
 }

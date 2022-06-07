@@ -1,10 +1,22 @@
-<div *ngFor="let post1 of post">
-    <p>{{post1.id}}</p>
-    <p>{{post1.title}}</p>
-    <p>hola</p>
-</div>
-
-<div *ngIf="post">
-    <p>post1: {{post.id}}</p>
-    <p>post2: {{post}}</p>
-</div>
+<header>
+    <h1>Post and View</h1>
+</header>
+<main>
+    <section *ngIf="post && comment">
+        <article>
+            <h3>Detail post: {{post.id}}</h3>
+            <h3>{{post.title}}</h3>
+            <p>{{post.body}}</p>
+        </article>
+        <article>
+            <h4>Comments:</h4>
+            <p>id: {{comment.id}}</p>
+            <p>name: {{comment.name}}</p>
+            <p>email: {{comment.email}}</p>
+            <p>body: {{comment.body}}</p>
+        </article>
+    </section>
+</main>    
+<footer>
+    <p>Creado por: Leandro M. Carlino A.</p>
+</footer>

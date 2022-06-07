@@ -6,14 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/shared/home/home.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { CommentsComponent } from './components/comments/comments.component';
-import { FormComponent } from './components/form/form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JsonDataService } from 'src/app/services/json-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './module/material-module/material.module';
-
 
 @NgModule({
   declarations: [
@@ -21,8 +18,6 @@ import { MaterialModule } from './module/material-module/material.module';
     HomeComponent,
     PostListComponent,
     PostDetailComponent,
-    CommentsComponent,
-    FormComponent,
     PageNotFoundComponent,
     
   ],

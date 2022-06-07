@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonDataService } from 'src/app/services/json-data.service';
-import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -11,17 +10,12 @@ export class PostListComponent implements OnInit {
 
   posts: any;
 
-  constructor(public jsonDataService: JsonDataService,
-              private router: Router) { }
+  constructor(public jsonDataService: JsonDataService) { }
 
   ngOnInit(): void {
-    this.jsonDataService.getPosts().subscribe(data => {
+    this.jsonDataService.getPostsList().subscribe(data => {
       this.posts = data;
     })
-  }
-
-  getPost(id:number) {
-    this.router.navigate(["/post-detail/" + id]);
   }
 }
 
