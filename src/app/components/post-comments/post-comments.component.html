@@ -1,8 +1,31 @@
 <article>
-    <h4>Comments:</h4>
+    <h3>Comments:</h3>
     <ul *ngFor="let comment of comments" class="list-group">
         <li class="list-group-item active">Name: {{comment.name}}</li>
         <li class="list-group-item">Email: {{comment.email}}</li>
         <li class="list-group-item">{{comment.body}}</li>
     </ul>
+</article>
+<article class="container-form">
+    <h3>Add a Comment!</h3>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput placeholder="Name LastName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="example@gmail.com">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea type="text" matInput placeholder="Your comment..."></textarea>
+        </mat-form-field>
+
+        <button type="submit" class="btn btn-primary mt-2 mb-2 btn-block">
+            Submit
+        </button>
+    </form>
 </article>

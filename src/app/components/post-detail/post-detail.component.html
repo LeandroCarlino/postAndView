@@ -7,7 +7,7 @@
     </div>
     <section *ngIf="post">
         <article>
-            <h3>Post Id: {{post.id}}</h3>
+            <h3>Post Id: <span class="text-danger">{{post.id}}</span></h3>
             <h2>Title: {{post.title | uppercase}}</h2>
             <p>{{post.body}} {{post.body}} {{post.body}}</p>
             <p>{{post.body}} {{post.body}}</p>

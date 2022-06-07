@@ -13,3 +13,7 @@ h2 {
 p {
     margin-bottom: 0em;
 }
+
+.td-link {
+    cursor: pointer;
+}
