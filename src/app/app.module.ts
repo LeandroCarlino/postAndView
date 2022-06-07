@@ -9,6 +9,11 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { CommentsComponent } from './components/comments/comments.component';
 import { FormComponent } from './components/form/form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JsonDataService } from 'src/app/services/json-data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './module/material-module/material.module';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +24,16 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CommentsComponent,
     FormComponent,
     PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [ JsonDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
