@@ -48,8 +48,6 @@ export class PostCommentsComponent implements OnInit {
   }
 
   save () {
-    const id = this.comments;
-    console.log(id)
     if (this.form.invalid) {
       return Object.values(this.form.controls).forEach (control => {
         if (control instanceof FormGroup) {
