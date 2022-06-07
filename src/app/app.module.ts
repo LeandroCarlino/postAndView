@@ -12,6 +12,7 @@ import { JsonDataService } from 'src/app/services/json-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './module/material-module/material.module';
 import { PostCommentsComponent } from './components/post-comments/post-comments.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,14 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
     PostDetailComponent,
     PageNotFoundComponent,
     PostCommentsComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [ JsonDataService ],
   bootstrap: [AppComponent]

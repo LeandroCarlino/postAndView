@@ -6,25 +6,29 @@
         <li class="list-group-item">{{comment.body}}</li>
     </ul>
 </article>
+
 <article class="container-form">
     <h3>Add a Comment!</h3>
-    <form class="example-form">
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()"  class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Name</mat-label>
-            <input type="text" matInput placeholder="Name LastName">
+            <input type="text" formControlName="name" [class.is-invalid]="invalidName" matInput placeholder="Name LastName">
+            <mat-error *ngIf="invalidName">Invalid name</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="example@gmail.com">
+            <mat-label>Mail</mat-label>
+            <input type="email" formControlName="mail" [class.is-invalid]="invalidMail" matInput placeholder="example@gmail.com">
+            <mat-error *ngIf="invalidMail">Invalid mail</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Leave a comment</mat-label>
-            <textarea type="text" matInput placeholder="Your comment..."></textarea>
+            <textarea type="text" formControlName="comment" [class.is-invalidad]="invalidComment" matInput placeholder="Your comment..."></textarea>
+            <mat-error *ngIf="invalidComment">Invalid comment</mat-error>
         </mat-form-field>
 
-        <button type="submit" class="btn btn-primary mt-2 mb-2 btn-block">
+        <button type="submit" (click)="save()" class="btn btn-primary mt-2 mb-2 btn-block">
             Submit
         </button>
     </form>
