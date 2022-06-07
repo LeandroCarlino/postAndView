@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JsonDataService } from 'src/app/services/json-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './module/material-module/material.module';
+import { PostCommentsComponent } from './components/post-comments/post-comments.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MaterialModule } from './module/material-module/material.module';
     PostListComponent,
     PostDetailComponent,
     PageNotFoundComponent,
+    PostCommentsComponent,
     
   ],
   imports: [

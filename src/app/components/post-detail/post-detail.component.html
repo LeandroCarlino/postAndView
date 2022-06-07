@@ -13,15 +13,7 @@
             <p>{{post.body}} {{post.body}}</p>
             <p>{{post.body}} {{post.body}}</p>
         </article>
-        <article>
-            <h4>Comments:</h4>
-            <ul *ngFor="let comment of comments" class="list-group">
-                <li class="list-group-item active">Name: {{comment.name}}</li>
-                <li class="list-group-item">Email: {{comment.email}}</li>
-                <li class="list-group-item">{{comment.body}}</li>
-            </ul>
-        </article>
-
+        <app-post-comments></app-post-comments>
     </section>
 </main>    
 <footer>

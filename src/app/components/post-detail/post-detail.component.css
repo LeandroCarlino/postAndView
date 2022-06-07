@@ -2,19 +2,17 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
-    padding-top: 2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 .buttonContainer {
     padding: 1em;
-    float: right
 }
 
 article {
     background-color: rgb(241, 245, 248);
-    margin: 1em;
-
+    margin-bottom: 1em;
 }
 
 header {
@@ -40,10 +38,4 @@ footer {
 
 footer p {  
     margin-bottom: 0rem;
-}
-
-ul {
-    margin-bottom: 1em;
-    max-width: 600px;
-
 }
