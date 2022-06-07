@@ -20,10 +20,6 @@ export class PostDetailComponent implements OnInit {
   constructor(private jsonDataService: JsonDataService, private route: ActivatedRoute) {
   }
 
-  getComments(id: string): void {
-    this.jsonDataService.getCommentId(id)
-      .subscribe(comment => this.comments = comment)
-  }
 
   ngOnInit(): void {
     this.route.params
@@ -36,7 +32,7 @@ export class PostDetailComponent implements OnInit {
     .pipe (
       switchMap( ({id}) => this.jsonDataService.getCommentId(id))
     )
-    .subscribe( data => this.comments = data);
+    .subscribe( comment => this.comments = comment);
 
     // this.route.params
     // .pipe (

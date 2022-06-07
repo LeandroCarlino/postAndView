@@ -6,6 +6,11 @@ section {
     padding-top: 2em;
 }
 
+.buttonContainer {
+    padding: 1em;
+    float: right
+}
+
 article {
     background-color: rgb(241, 245, 248);
     margin: 1em;
