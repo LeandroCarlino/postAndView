@@ -2,12 +2,14 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1em;
+    padding-top: 2em;
 }
 
 article {
     background-color: rgb(241, 245, 248);
-    margin-top:2em;
-    padding: 2em;
+    margin: 1em;
+
 }
 
 header {
@@ -23,7 +25,6 @@ main {
     background-color: rgb(241, 245, 248);
 }
 
-
 footer {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,68,1) 60%, rgba(8,60,70,1) 97%);
@@ -34,4 +35,10 @@ footer {
 
 footer p {  
     margin-bottom: 0rem;
+}
+
+ul {
+    margin-bottom: 1em;
+    max-width: 600px;
+
 }

@@ -14,9 +14,15 @@ import { CommentInterface } from 'src/app/interfaces/comment.interface';
 export class PostDetailComponent implements OnInit {
 
   post!: Post;
-  comment!: CommentInterface;
+  id!: string;
+  comments!: any;
 
   constructor(private jsonDataService: JsonDataService, private route: ActivatedRoute) {
+  }
+
+  getComments(id: string): void {
+    this.jsonDataService.getCommentId(id)
+      .subscribe(comment => this.comments = comment)
   }
 
   ngOnInit(): void {
@@ -25,13 +31,20 @@ export class PostDetailComponent implements OnInit {
       switchMap( ({id}) => this.jsonDataService.getPostId(id))
     )
     .subscribe( post => this.post = post);
-
+    
     this.route.params
     .pipe (
       switchMap( ({id}) => this.jsonDataService.getCommentId(id))
     )
-    .subscribe( comment => this.comment = comment);
-    console.log(this.post.id)
+    .subscribe( data => this.comments = data);
+
+    // this.route.params
+    // .pipe (
+    //   switchMap( ({id}) => this.jsonDataService.getCommentId(id))
+    // )
+    // .subscribe( comment => this.comment = comment);
+    // console.log(this.post.id)
+
   };
 
   

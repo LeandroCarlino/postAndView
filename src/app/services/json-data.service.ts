@@ -20,8 +20,9 @@ export class JsonDataService {
     return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
   
-  getCommentId (id:string): Observable <CommentInterface> {
-    return this.http.get<CommentInterface>(`https://jsonplaceholder.typicode.com/comments?id=${id}`);
+  getCommentId (id:string): Observable <any> {
+    return this.http.get<CommentInterface>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+    
   }
 
 
