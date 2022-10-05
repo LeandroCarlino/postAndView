@@ -1,35 +1,66 @@
 <article>
-    <h3>Comments:</h3>
-    <ul *ngFor="let comment of comments" class="list-group">
-        <li class="list-group-item active">Name: {{comment.name}}</li>
-        <li class="list-group-item">Email: {{comment.email}}</li>
-        <li class="list-group-item">{{comment.body}}</li>
+  <h3>Comments:</h3>
+  <ul *ngFor="let comment of comments" class="list-group">
+    <li class="list-group-item active">Name: {{ comment.name }}</li>
+    <li class="list-group-item">Email: {{ comment.email }}</li>
+    <li class="list-group-item">{{ comment.body }}</li>
+  </ul>
+  <ng-container *ngIf="newComments.length > 0">
+    <ul *ngFor="let newComment of newComments" class="list-group">
+      <li class="list-group-item active">Name: {{ newComment.name }}</li>
+      <li class="list-group-item">Email: {{ newComment.email }}</li>
+      <li class="list-group-item">{{ newComment.body }}</li>
+      <button (click)="delete()">Eliminar</button>
     </ul>
+  </ng-container>
 </article>
 
 <article class="container-form">
-    <h3>Add a Comment!</h3>
-    <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()"  class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Name</mat-label>
-            <input type="text" formControlName="name" [class.is-invalid]="invalidName" matInput placeholder="Name LastName">
-            <mat-error *ngIf="invalidName">Invalid name</mat-error>
-        </mat-form-field>
+  <h3>Add a Comment!</h3>
+  <form
+    autocomplete="off"
+    [formGroup]="form"
+    (ngSubmit)="save()"
+    class="example-form"
+  >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        type="text"
+        formControlName="name"
+        [class.is-invalid]="invalidName"
+        matInput
+        placeholder="Name LastName"
+      />
+      <mat-error *ngIf="invalidName">Invalid name</mat-error>
+    </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Mail</mat-label>
-            <input type="email" formControlName="mail" [class.is-invalid]="invalidMail" matInput placeholder="example@gmail.com">
-            <mat-error *ngIf="invalidMail">Invalid mail</mat-error>
-        </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mail</mat-label>
+      <input
+        type="email"
+        formControlName="email"
+        [class.is-invalid]="invalidMail"
+        matInput
+        placeholder="example@gmail.com"
+      />
+      <mat-error *ngIf="invalidMail">Invalid mail</mat-error>
+    </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Leave a comment</mat-label>
-            <textarea type="text" formControlName="comment" [class.is-invalidad]="invalidComment" matInput placeholder="Your comment..."></textarea>
-            <mat-error *ngIf="invalidComment">Invalid comment</mat-error>
-        </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea
+        type="text"
+        formControlName="body"
+        [class.is-invalidad]="invalidComment"
+        matInput
+        placeholder="Your comment..."
+      ></textarea>
+      <mat-error *ngIf="invalidComment">Invalid comment</mat-error>
+    </mat-form-field>
 
-        <button type="submit" (click)="save()" class="btn btn-primary mt-2 mb-2 btn-block">
-            Submit
-        </button>
-    </form>
+    <button type="submit" class="btn btn-primary mt-2 mb-2 btn-block">
+      Submit
+    </button>
+  </form>
 </article>
