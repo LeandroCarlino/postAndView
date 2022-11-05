@@ -2,20 +2,20 @@
   <h3>Comentarios:</h3>
   <ul *ngFor="let comment of comments" class="list-group">
     <li class="list-group-item">
-      <span class="text-danger">Name:</span> {{ comment.name }}
+      <span class="text-danger">Nombre:</span> {{ comment.name }}
     </li>
     <li class="list-group-item">
-      <span class="text-danger">Email:</span> {{ comment.email }}
+      <span class="text-danger">E-mail:</span> {{ comment.email }}
     </li>
     <li class="list-group-item">{{ comment.body }}</li>
   </ul>
   <ng-container *ngIf="newComments.length > 0">
     <ul *ngFor="let newComment of newComments" class="list-group">
       <li class="list-group-item">
-        <span class="text-danger">Name:</span> {{ newComment.name }}
+        <span class="text-danger">Nombre:</span> {{ newComment.name }}
       </li>
       <li class="list-group-item">
-        <span class="text-danger">Email:</span> {{ newComment.email }}
+        <span class="text-danger">E-mail:</span> {{ newComment.email }}
       </li>
       <li class="list-group-item">{{ newComment.body }}</li>
     </ul>

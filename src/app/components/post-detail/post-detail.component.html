@@ -1,7 +1,7 @@
 <section *ngIf="post" class="post-detail">
   <div class="title-container">
     <h4>
-      Post Id: <span class="text-danger">{{ post.id }}</span>
+      Post numero: <span class="text-danger">{{ post.id }}</span>
     </h4>
     <button type="button" class="btn btn-primary" [routerLink]="'/home'">
       Back to Home
@@ -9,7 +9,7 @@
   </div>
   <article>
     <h3>
-      <span class="text-danger">Title:</span> {{ post.title | uppercase }}
+      <span class="text-danger">Titulo:</span> {{ post.title | uppercase }}
     </h3>
     <p>{{ post.body }} {{ post.body }} {{ post.body }}</p>
     <p>{{ post.body }} {{ post.body }}</p>
