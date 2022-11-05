@@ -1,25 +1,26 @@
-ul {
-    margin-bottom: 1em;
-    max-width: 600px;
+h3 {
+  color: #777;
+  margin: 1em 0;
 }
 
-.container-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    margin-top: 3em;
-    margin-bottom: 1em;
+.list-group {
+  margin-bottom: 1em;
 }
 
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
+.list-group-item {
+  background-color: #25252b;
+  color: rgba(255, 255, 255, 0.859);
+}
+
+form {
+  color: rgba(255, 255, 255, 0.859);
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+@media (max-width: 800px) {
+  form {
     width: 100%;
-    margin-top: 1em;
-}
-
-.example-full-width {
-    width: 100%;
-    margin-bottom: 0.5em;
+  }
 }

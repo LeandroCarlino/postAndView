@@ -95,8 +95,4 @@ export class PostCommentsComponent implements OnInit {
     this.newComments.unshift(newComment)
     console.log(this.newComments);
   }
-
-  delete() {
-    this.newComments.shift()
-  }
 }

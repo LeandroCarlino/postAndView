@@ -5,26 +5,33 @@ import { Post } from '../interfaces/post.interface';
 import { CommentInterface } from '../interfaces/comment.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JsonDataService {
+  urlBase: string = 'https://jsonplaceholder.typicode.com';
+  newComment: Subject<CommentInterface[]>;
+  pageStart: BehaviorSubject<number>;
+  pageLimit: BehaviorSubject<number>;
 
-  newComment: any;
-
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.newComment = new Subject<CommentInterface[]>();
-  };
-
-  getPostsList(): Observable<Post[]>{
-    return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/users/1/posts");
+    this.pageStart = new BehaviorSubject<number>(0);
+    this.pageLimit = new BehaviorSubject<number>(10);
   }
 
-  getPostId(id: string): Observable <Post> {
-    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  }
-  
-  getCommentId (id:string): Observable <any> {
-    return this.http.get<CommentInterface>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`); 
+  ngOnInit() {}
+
+  getPostsList(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.urlBase}/posts`);
   }
 
+  getPostId(id: string): Observable<Post> {
+    return this.http.get<Post>(`${this.urlBase}/posts/${id}`);
+  }
+
+  getCommentId(id: string): Observable<CommentInterface> {
+    return this.http.get<CommentInterface>(
+      `${this.urlBase}/posts/${id}/comments`
+    );
+  }
 }

@@ -1,22 +1,29 @@
 <article>
-  <h3>Comments:</h3>
+  <h3>Comentarios:</h3>
   <ul *ngFor="let comment of comments" class="list-group">
-    <li class="list-group-item active">Name: {{ comment.name }}</li>
-    <li class="list-group-item">Email: {{ comment.email }}</li>
+    <li class="list-group-item">
+      <span class="text-danger">Name:</span> {{ comment.name }}
+    </li>
+    <li class="list-group-item">
+      <span class="text-danger">Email:</span> {{ comment.email }}
+    </li>
     <li class="list-group-item">{{ comment.body }}</li>
   </ul>
   <ng-container *ngIf="newComments.length > 0">
     <ul *ngFor="let newComment of newComments" class="list-group">
-      <li class="list-group-item active">Name: {{ newComment.name }}</li>
-      <li class="list-group-item">Email: {{ newComment.email }}</li>
+      <li class="list-group-item">
+        <span class="text-danger">Name:</span> {{ newComment.name }}
+      </li>
+      <li class="list-group-item">
+        <span class="text-danger">Email:</span> {{ newComment.email }}
+      </li>
       <li class="list-group-item">{{ newComment.body }}</li>
-      <button (click)="delete()">Eliminar</button>
     </ul>
   </ng-container>
 </article>
 
 <article class="container-form">
-  <h3>Add a Comment!</h3>
+  <h3>Agrega un comentario!</h3>
   <form
     autocomplete="off"
     [formGroup]="form"

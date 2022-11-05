@@ -1,13 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 body {
-    background: rgb(235,237,241);
-    background: radial-gradient(circle, rgba(235,237,241,1) 0%, rgba(181,202,228,1) 100%);
+  font-family: "Inter", sans-serif !important;
+  background-color: #19191d;
+  font-weight: 300;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  border-width: 1px 0;
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mat-form-field {
+  margin-bottom: 0.5em;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.859);
+}
+
+.mat-form-field-label {
+  color: #777 !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #25252b;
+}

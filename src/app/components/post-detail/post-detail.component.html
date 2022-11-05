@@ -1,21 +1,19 @@
-<header>
-    <h1>Post and View</h1>
-</header>
-<main>
-    <div class="buttonContainer">
-        <button type="button" class="btn btn-primary" [routerLink]="'/home'">Back to Home</button>
-    </div>
-    <section *ngIf="post">
-        <article>
-            <h3>Post Id: <span class="text-danger">{{post.id}}</span></h3>
-            <h2>Title: {{post.title | uppercase}}</h2>
-            <p>{{post.body}} {{post.body}} {{post.body}}</p>
-            <p>{{post.body}} {{post.body}}</p>
-            <p>{{post.body}} {{post.body}}</p>
-        </article>
-        <app-post-comments></app-post-comments>
-    </section>
-</main>    
-<footer>
-    <p>Creado por: Leandro M. Carlino A.</p>
-</footer>
+<section *ngIf="post" class="post-detail">
+  <div class="title-container">
+    <h4>
+      Post Id: <span class="text-danger">{{ post.id }}</span>
+    </h4>
+    <button type="button" class="btn btn-primary" [routerLink]="'/home'">
+      Back to Home
+    </button>
+  </div>
+  <article>
+    <h3>
+      <span class="text-danger">Title:</span> {{ post.title | uppercase }}
+    </h3>
+    <p>{{ post.body }} {{ post.body }} {{ post.body }}</p>
+    <p>{{ post.body }} {{ post.body }}</p>
+    <p>{{ post.body }} {{ post.body }}</p>
+  </article>
+</section>
+<app-post-comments></app-post-comments>
