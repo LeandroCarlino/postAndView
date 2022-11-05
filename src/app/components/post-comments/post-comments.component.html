@@ -1,5 +1,5 @@
 <article>
-  <h3>Comentarios:</h3>
+  <h4>Comentarios:</h4>
   <ul *ngFor="let comment of comments" class="list-group">
     <li class="list-group-item">
       <span class="text-danger">Nombre:</span> {{ comment.name }}
@@ -23,7 +23,7 @@
 </article>
 
 <article class="container-form">
-  <h3>Agrega un comentario!</h3>
+  <h4>Agrega un comentario!</h4>
   <form
     autocomplete="off"
     [formGroup]="form"

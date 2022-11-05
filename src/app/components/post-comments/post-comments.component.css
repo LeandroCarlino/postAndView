@@ -1,6 +1,11 @@
 h3 {
   color: #777;
-  margin: 1em 0;
+  margin: 2em 0em 1em 0;
+}
+
+h4 {
+  color: #777;
+  margin: 2em 0em 1em 0;
 }
 
 .list-group {
