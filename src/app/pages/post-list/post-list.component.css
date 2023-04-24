@@ -3,6 +3,11 @@ table {
   margin-bottom: 0;
 }
 
+.post-list {
+  padding-bottom: 4em;
+  padding-top: 2em;
+}
+
 .actions {
   display: flex;
   align-items: center;
