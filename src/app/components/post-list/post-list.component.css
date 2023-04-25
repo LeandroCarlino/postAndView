@@ -3,11 +3,6 @@ table {
   margin-bottom: 0;
 }
 
-.post-list {
-  padding-bottom: 4em;
-  padding-top: 2em;
-}
-
 .actions {
   display: flex;
   align-items: center;
@@ -20,6 +15,10 @@ table {
 
 h4 {
   color: #fff;
+  background-color: #25252b;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 tr {
@@ -29,7 +28,7 @@ tr {
 th {
   color: whitesmoke;
   padding: 2em !important;
-  background-color: #19191d;
+  background-color: #25252b;
   font-weight: 700 !important;
   font-size: 16px !important;
 }

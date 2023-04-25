@@ -8,6 +8,7 @@ body {
   font-family: "Inter", sans-serif !important;
   background-color: #19191d;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.859);
 }
 
 .bd-placeholder-img {
@@ -72,4 +73,8 @@ body {
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: #25252b;
+}
+
+.mat-select-value {
+  color: rgba(255, 255, 255, 0.859);
 }
