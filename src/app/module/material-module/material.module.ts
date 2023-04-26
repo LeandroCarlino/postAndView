@@ -29,7 +29,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   exports: [
@@ -65,6 +65,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class MaterialModule {}

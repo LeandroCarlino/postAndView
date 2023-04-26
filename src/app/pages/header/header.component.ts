@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,26 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   profilePhoto: string = '../assets/img/nophoto.jpg';
   selectedOption!: string;
+  selectControl!: FormControl;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.selectControl = new FormControl();
+
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event: NavigationEnd) => {
+        if (event.url === '/home') {
+          this.selectControl.setValue(null);
+          console.log('funciona');
+        }
+      });
+  }
 
   onOptionSelected(event: MatSelectChange) {
     this.selectedOption = event.value;

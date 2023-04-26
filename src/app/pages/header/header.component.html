@@ -12,6 +12,7 @@
         <mat-select
           [(ngModel)]="selectedOption"
           (selectionChange)="onOptionSelected($event)"
+          [formControl]="selectControl"
           disableRipple
         >
           <mat-option value="1">Inicio</mat-option>
