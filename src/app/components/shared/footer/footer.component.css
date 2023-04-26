@@ -7,7 +7,15 @@ footer svg {
   width: 50px;
 }
 
-svg {
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2em;
+  padding-bottom: 4em;
+}
+
+.footer-container {
   margin-right: 1em;
 }
 
