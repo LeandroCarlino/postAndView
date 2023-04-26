@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'post-detail/:id', component: PostDetailComponent },
   { path: '', pathMatch: 'full', component: PostListComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
+  { path: 'page-not-found', component: PageNotFoundComponent },
 ];
 
 @NgModule({
