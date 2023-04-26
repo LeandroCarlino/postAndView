@@ -15,3 +15,18 @@ header {
   border-radius: 50%;
   border: 1px solid #fff;
 }
+
+/* @media (max-width: 480px) {
+  header {
+    padding-bottom: 1em;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+
+  .header-container {
+    flex-direction: column;
+  }
+} */

@@ -61,6 +61,6 @@ p {
 
 @media (max-width: 800px) {
   .post-list {
-    padding: 2em;
+    padding: 10px;
   }
 }
