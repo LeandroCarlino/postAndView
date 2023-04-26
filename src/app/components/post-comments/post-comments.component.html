@@ -33,15 +33,15 @@
     class="example-form"
   >
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Name</mat-label>
+      <mat-label>Nombre</mat-label>
       <input
         type="text"
         formControlName="name"
         [class.is-invalid]="invalidName"
         matInput
-        placeholder="Name LastName"
+        placeholder="Nombre y apellido"
       />
-      <mat-error *ngIf="invalidName">Invalid name</mat-error>
+      <mat-error *ngIf="invalidName">Nombre inválido</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
@@ -53,19 +53,19 @@
         matInput
         placeholder="example@gmail.com"
       />
-      <mat-error *ngIf="invalidMail">Invalid mail</mat-error>
+      <mat-error *ngIf="invalidMail">Correo inválido</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Leave a comment</mat-label>
+      <mat-label>Deja un comentario</mat-label>
       <textarea
         type="text"
         formControlName="body"
         [class.is-invalidad]="invalidComment"
         matInput
-        placeholder="Your comment..."
+        placeholder="Tu comentario..."
       ></textarea>
-      <mat-error *ngIf="invalidComment">Invalid comment</mat-error>
+      <mat-error *ngIf="invalidComment">Comentario inválido</mat-error>
     </mat-form-field>
 
     <button type="submit" class="btn btn-primary mt-2 mb-2 btn-block">

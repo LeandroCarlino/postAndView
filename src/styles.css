@@ -8,24 +8,26 @@ body {
   font-family: "Inter", sans-serif !important;
   background-color: #19191d;
   opacity: 1;
-  background-image: repeating-linear-gradient(
-      45deg,
-      #1b1b1f 25%,
-      transparent 25%,
-      transparent 75%,
-      #1b1b1f 75%,
-      #1b1b1f
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #19191d 20%,
+      #19191d 80%,
+      transparent 80%,
+      transparent
     ),
-    repeating-linear-gradient(
-      45deg,
-      #1b1b1f 25%,
-      #19191d 25%,
-      #19191d 75%,
-      #1b1b1f 75%,
-      #1b1b1f
-    );
-  background-position: 0 0, 40px 40px;
-  background-size: 80px 80px;
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #19191d 20%,
+        #19191d 80%,
+        transparent 80%,
+        transparent
+      )
+      100px 100px,
+    linear-gradient(#1b1b1f 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #1b1b1f 8px, #19191d 8px) -4px 0;
+  background-size: 200px 200px, 200px 200px, 100px 100px, 100px 100px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.859);
 }
@@ -95,5 +97,9 @@ body {
 }
 
 .mat-select-value {
+  color: rgba(255, 255, 255, 0.859);
+}
+
+.mat-input-element::placeholder {
   color: rgba(255, 255, 255, 0.859);
 }

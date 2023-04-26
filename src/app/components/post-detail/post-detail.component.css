@@ -1,3 +1,9 @@
+.post-detail-container {
+  padding: 2em;
+  background-color: #0000003b;
+  border-radius: 10px;
+}
+
 .post-detail {
   color: rgba(255, 255, 255, 0.859);
 }
