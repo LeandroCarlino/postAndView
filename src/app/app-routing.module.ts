@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { PostListComponent } from './components/post-list/post-list.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { PostListComponent } from './pages/post-list/post-list.component';
 
 const routes: Routes = [
   { path: 'home', component: PostListComponent },
