@@ -13,16 +13,27 @@ import { JsonDataService } from 'src/app/services/json-data.service';
 export class PostListComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
+  postList!: Post[];
   dataSource!: MatTableDataSource<Post>;
   columnsToDisplay = ['Numero', 'Titulo', 'Mensaje', 'Acciones'];
 
   constructor(public jsonDataService: JsonDataService) {}
 
   ngOnInit(): void {
+    this.getList();
+  }
+
+  private getList() {
     this.jsonDataService.getPostsList().subscribe((posts) => {
-      this.dataSource = new MatTableDataSource(posts);
+      this.postList = posts;
+      this.dataSource = new MatTableDataSource(this.postList);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
+  }
+
+  deletePost(id: number) {
+    this.postList = this.postList.filter((post) => post.id !== id);
+    this.dataSource.data = this.postList;
   }
 }

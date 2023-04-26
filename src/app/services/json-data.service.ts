@@ -34,4 +34,8 @@ export class JsonDataService {
       `${this.urlBase}/posts/${id}/comments`
     );
   }
+
+  deletePost(id: number): Observable<Post> {
+    return this.http.delete<Post>(`${this.urlBase}/posts/${id}`);
+  }
 }

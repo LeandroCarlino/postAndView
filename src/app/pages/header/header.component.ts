@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.navigationDetector();
+  }
+
+  private navigationDetector() {
     this.selectControl = new FormControl();
 
     this.router.events
@@ -28,7 +32,6 @@ export class HeaderComponent implements OnInit {
       .subscribe((event: NavigationEnd) => {
         if (event.url === '/home') {
           this.selectControl.setValue(null);
-          console.log('funciona');
         }
       });
   }
