@@ -13,14 +13,22 @@ import { CommentInterface } from 'src/app/interfaces/comment.interface';
 export class PostDetailComponent implements OnInit {
   newComments: CommentInterface[] = [];
   post!: Post;
+  loading: boolean = true;
   constructor(
     private jsonDataService: JsonDataService,
     private route: ActivatedRoute
   ) {}
-  
+
   ngOnInit(): void {
+    this.getPost();
+  }
+
+  private getPost() {
     this.route.params
       .pipe(switchMap(({ id }) => this.jsonDataService.getPostId(id)))
-      .subscribe((post) => (this.post = post));
+      .subscribe((post) => {
+        this.post = post;
+        this.loading = false;
+      });
   }
 }

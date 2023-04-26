@@ -13,6 +13,7 @@ import { PostCommentsComponent } from './pages/post-comments/post-comments.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     PostCommentsComponent,
     HeaderComponent,
     FooterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

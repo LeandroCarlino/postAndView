@@ -16,6 +16,7 @@ export class PostListComponent implements OnInit {
   postList!: Post[];
   dataSource!: MatTableDataSource<Post>;
   columnsToDisplay = ['Numero', 'Titulo', 'Mensaje', 'Acciones'];
+  loading: boolean = true;
 
   constructor(public jsonDataService: JsonDataService) {}
 
@@ -29,6 +30,7 @@ export class PostListComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.postList);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
+      this.loading = false;
     });
   }
 

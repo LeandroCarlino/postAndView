@@ -1,61 +1,70 @@
-<div class="post-list">
-  <h4>Lista de posts:</h4>
-  <div class="table-responsive">
-    <table
-      mat-table
-      [dataSource]="dataSource"
-      class="table table-dark text-white"
-    >
-      <ng-container matColumnDef="Numero">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
-        <td mat-cell *matCellDef="let element" class="text-white-50">
-          {{ element.id }}
-        </td>
-      </ng-container>
+<ng-container *ngIf="loading; else Posts">
+  <app-loader></app-loader>
+</ng-container>
 
-      <ng-container matColumnDef="Titulo">
-        <th mat-header-cell *matHeaderCellDef>Titulo</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.title | slice : 0 : 30 }}
-        </td>
-      </ng-container>
+<ng-template #Posts>
+  <div class="post-list">
+    <h4>Lista de posts:</h4>
+    <div class="table-responsive">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="table table-dark text-white"
+      >
+        <ng-container matColumnDef="Numero">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element" class="text-white-50">
+            {{ element.id }}
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="Mensaje">
-        <th mat-header-cell *matHeaderCellDef>Mensaje</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.body | slice : 0 : 60 }}...
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="Titulo">
+          <th mat-header-cell *matHeaderCellDef>Titulo</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.title | slice : 0 : 30 }}
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="Acciones">
-        <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let element">
-          <div>
-            <button
-              mat-flat-button
-              color="primary"
-              class="action-button"
-              [routerLink]="['/post-detail', element.id]"
-            >
-              <mat-icon>keyboard_arrow_up</mat-icon>
-            </button>
-            <button
-              mat-flat-button
-              color="warn"
-              (click)="deletePost(element.id)"
-            >
-              <mat-icon>delete</mat-icon>
-            </button>
-          </div>
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="Mensaje">
+          <th mat-header-cell *matHeaderCellDef>Mensaje</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.body | slice : 0 : 60 }}...
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
-    </table>
-    <mat-paginator
-      [pageSizeOptions]="[10, 25, 50, 100]"
-      showFirstLastButtons
-    ></mat-paginator>
+        <ng-container matColumnDef="Acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <div>
+              <button
+                mat-flat-button
+                color="primary"
+                class="action-button"
+                [routerLink]="['/post-detail', element.id]"
+              >
+                <mat-icon>keyboard_arrow_up</mat-icon>
+              </button>
+              <button
+                mat-flat-button
+                color="warn"
+                (click)="deletePost(element.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr
+          mat-header-row
+          *matHeaderRowDef="columnsToDisplay; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[10, 25, 50, 100]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
   </div>
-</div>
+</ng-template>
