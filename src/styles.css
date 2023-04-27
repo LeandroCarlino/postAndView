@@ -91,6 +91,11 @@ body {
   background-color: #25252b;
 }
 
+.mat-dialog-container {
+  background-color: #231313;
+  color: rgba(255, 255, 255, 0.859);
+}
+
 .mat-select-value {
   color: rgba(255, 255, 255, 0.859);
 }
