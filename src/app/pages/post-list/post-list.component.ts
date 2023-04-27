@@ -36,6 +36,6 @@ export class PostListComponent implements OnInit {
 
   deletePost(id: number) {
     this.postList = this.postList.filter((post) => post.id !== id);
-    this.dataSource = new MatTableDataSource(this.postList);
+    this.dataSource.data = this.postList;
   }
 }
