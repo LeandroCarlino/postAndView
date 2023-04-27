@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Hola {{data.name}}!</h1>
+<div mat-dialog-content>
+    <p>Modifica tus datos:</p>
+    <div style="display:flex; flex-direction: column;">
+        <mat-form-field class="example" appearance="fill">
+            <mat-label>Tu nombre</mat-label>
+            <input matInput [(ngModel)]="data.name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Tu correo</mat-label>
+            <input matInput [(ngModel)]="data.mail">
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No, gracias</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

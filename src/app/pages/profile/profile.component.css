@@ -9,6 +9,16 @@
 
 .profile-container div {
   padding-bottom: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.profilePhoto {
+  margin-bottom: 1em;
+  border-radius: 50%;
+  width: 90px;
+  height: 100px;
+  border: 1px white solid;
 }
 
 .backButton {

@@ -15,6 +15,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileDialogComponent } from './components/profile-dialog/profile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     FooterComponent,
     LoaderComponent,
     ProfileComponent,
+    ProfileDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,16 +4,15 @@
       Volver
     </button>
   </div>
-  <div>
+  <div class="title-container">
     <h3>Mi perfil</h3>
-
-    <img [src]="profilePhoto" alt="profile Photo" style="border-radius: 50%; width: 80px" />
   </div>
   <div>
-    <p>Nombre: Invitado</p>
-    <p>Correo: Invitado</p>
+    <img [src]="profilePhoto" class="profilePhoto" alt="profile photo" />
+    <p>Nombre: {{ name || 'Invitado' }}</p>
+    <p>Correo: {{ mail || 'Desconocido' }}</p>
   </div>
   <div>
-    <p>Modificar perfil</p>
+    <button mat-raised-button (click)="openDialog()">Modificar perfil</button>
   </div>
 </section>
