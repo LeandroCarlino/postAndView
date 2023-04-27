@@ -10,7 +10,6 @@ import { filter } from 'rxjs';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  profilePhoto: string = '../assets/img/nophoto.jpg';
   selectedOption!: string;
   selectControl!: FormControl;
 
@@ -41,7 +40,7 @@ export class HeaderComponent implements OnInit {
     if (this.selectedOption === '1') {
       this.router.navigate(['/home']);
     } else if (this.selectedOption === '2') {
-      this.router.navigate(['/page-not-found']);
+      this.router.navigate(['/profile']);
     } else if (this.selectedOption === '3') {
       this.router.navigate(['/page-not-found']);
     }

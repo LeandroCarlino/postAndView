@@ -18,7 +18,7 @@ export class PostListComponent implements OnInit {
   columnsToDisplay = ['Numero', 'Titulo', 'Mensaje', 'Acciones'];
   loading: boolean = true;
 
-  constructor(public jsonDataService: JsonDataService) {}
+  constructor(public jsonDataService: JsonDataService) { }
 
   ngOnInit(): void {
     this.getList();
@@ -36,6 +36,6 @@ export class PostListComponent implements OnInit {
 
   deletePost(id: number) {
     this.postList = this.postList.filter((post) => post.id !== id);
-    this.dataSource.data = this.postList;
+    this.dataSource = new MatTableDataSource(this.postList);
   }
 }

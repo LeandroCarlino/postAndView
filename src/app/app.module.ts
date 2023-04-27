@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     HeaderComponent,
     FooterComponent,
     LoaderComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
