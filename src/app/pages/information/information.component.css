@@ -1,0 +1,16 @@
+.information-container {
+    background-color: #0000003b;
+    border-radius: 10px;
+    padding: 4em 2em;
+}
+
+.backButton {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+h4 {
+    margin: 2em 0em;
+}

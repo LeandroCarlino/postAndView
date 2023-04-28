@@ -16,6 +16,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileDialogComponent } from './components/profile-dialog/profile-dialog.component';
+import { InformationComponent } from './pages/information/information.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProfileDialogComponent } from './components/profile-dialog/profile-dial
     LoaderComponent,
     ProfileComponent,
     ProfileDialogComponent,
+    InformationComponent,
   ],
   imports: [
     BrowserModule,

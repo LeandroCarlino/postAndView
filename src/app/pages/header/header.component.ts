@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   selectedOption!: string;
   selectControl!: FormControl;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.navigationDetector();
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
     } else if (this.selectedOption === '2') {
       this.router.navigate(['/profile']);
     } else if (this.selectedOption === '3') {
-      this.router.navigate(['/page-not-found']);
+      this.router.navigate(['/information']);
     }
   }
 }
