@@ -62,14 +62,22 @@ p {
 
   mat-header-cell {
     padding: 0.3em;
-    font-size: 14px;
     margin-right: 1em;
   }
 
   mat-cell {
     padding: 0.3em;
-    font-size: 12px;
     margin-right: 1em;
   }
 
+}
+
+@media (max-width: 800px) {
+  mat-header-cell {
+    font-size: 14px;
+  }
+
+  mat-cell {
+    font-size: 12px;
+  }
 }
