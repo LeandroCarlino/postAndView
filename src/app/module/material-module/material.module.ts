@@ -66,6 +66,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
   ],
 })
-export class MaterialModule {}
+export class MaterialModule { }

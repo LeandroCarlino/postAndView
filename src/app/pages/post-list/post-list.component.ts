@@ -15,7 +15,7 @@ export class PostListComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   postList!: Post[];
   dataSource!: MatTableDataSource<Post>;
-  columnsToDisplay = ['Numero', 'Titulo', 'Mensaje', 'Acciones'];
+  columnsToDisplay = ['Id', 'Titulo', 'Mensaje', 'Acciones'];
   loading: boolean = true;
 
   constructor(public jsonDataService: JsonDataService) { }

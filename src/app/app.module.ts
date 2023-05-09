@@ -43,4 +43,4 @@ import { InformationComponent } from './pages/information/information.component'
   providers: [JsonDataService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

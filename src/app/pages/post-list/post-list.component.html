@@ -6,31 +6,30 @@
   <h4>Lista de posts:</h4>
   <div>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="Numero">
-        <mat-header-cell *matHeaderCellDef>Numero</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="text-white-50">
+      <ng-container matColumnDef="Id">
+        <mat-header-cell *matHeaderCellDef style="max-width: 12%">Id</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="text-white-50" style="max-width: 12%">
           {{ element.id }}
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Titulo">
-        <mat-header-cell *matHeaderCellDef>Titulo</mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <mat-header-cell *matHeaderCellDef style="max-width: 28%">Titulo</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="max-width: 28%">
           {{ element.title | slice : 0 : 30 }}
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Mensaje">
-        <mat-header-cell *matHeaderCellDef>Mensaje</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.body | slice : 0 : 60 }}...
+        <mat-header-cell *matHeaderCellDef style="max-width: 45%">Mensaje</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="max-width: 45%">
+          {{ element.body | slice : 0 : 70 }}...
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Acciones">
-        <mat-header-cell class="mat-header-cell" *matHeaderCellDef
-          style="justify-content: center;">Acciones</mat-header-cell>
-        <mat-cell *matCellDef="let element" style="justify-content: center; text-align: center;">
+        <mat-header-cell class="mat-header-cell" *matHeaderCellDef style="max-width: 15%">Acciones</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="max-width: 15%">
           <div>
             <button mat-flat-button color="primary" class="action-button" [routerLink]="['/post-detail', element.id]">
               <mat-icon>keyboard_arrow_up</mat-icon>
@@ -45,6 +44,7 @@
       <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></mat-header-row>
       <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
     </mat-table>
+
     <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
   </div>
 </div>
