@@ -1,5 +1,5 @@
-table {
-  width: 100%;
+mat-table {
+  background-color: #25252b;
   margin-bottom: 0;
 }
 
@@ -21,21 +21,19 @@ h4 {
   padding-left: 10px;
 }
 
-tr {
+mat-row {
   border-bottom: 2px solid #19191d;
 }
 
-th {
+mat-header-cell {
   color: whitesmoke;
-  padding: 2em !important;
   background-color: #25252b;
   font-weight: 700 !important;
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
-td {
+mat-cell {
   color: rgba(255, 255, 255, 0.859);
-  padding: 1.5em !important;
   background-color: #25252b;
 }
 
@@ -52,15 +50,26 @@ p {
   color: rgba(255, 255, 255, 0.859);
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 768px) {
   .action-button {
     margin-right: 0;
     margin-bottom: 5px;
   }
-}
 
-@media (max-width: 800px) {
   .post-list {
     padding: 10px;
   }
+
+  mat-header-cell,
+  .mat-header-cell {
+    padding: 0.5em;
+    font-size: 14px;
+  }
+
+  mat-cell {
+    padding: 0.5em;
+    margin-left: 1em;
+    font-size: 12px;
+  }
+
 }
