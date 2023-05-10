@@ -26,50 +26,30 @@
 
 <article class="container-form">
   <h4>Agrega un comentario</h4>
-  <form
-    autocomplete="off"
-    [formGroup]="form"
-    (ngSubmit)="save()"
-    class="example-form"
-  >
+  <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Nombre</mat-label>
-      <input
-        type="text"
-        formControlName="name"
-        [class.is-invalid]="invalidName"
-        matInput
-        placeholder="Nombre y apellido"
-      />
+      <input type="text" formControlName="name" [class.is-invalid]="invalidName" matInput
+        placeholder="Nombre y apellido" />
       <mat-error *ngIf="invalidName">Nombre inválido</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Mail</mat-label>
-      <input
-        type="email"
-        formControlName="email"
-        [class.is-invalid]="invalidMail"
-        matInput
-        placeholder="example@gmail.com"
-      />
+      <input type="email" formControlName="email" [class.is-invalid]="invalidMail" matInput
+        placeholder="example@gmail.com" />
       <mat-error *ngIf="invalidMail">Correo inválido</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Deja un comentario</mat-label>
-      <textarea
-        type="text"
-        formControlName="body"
-        [class.is-invalidad]="invalidComment"
-        matInput
-        placeholder="Tu comentario..."
-      ></textarea>
+      <textarea type="text" formControlName="body" [class.is-invalidad]="invalidComment" matInput
+        placeholder="Tu comentario..."></textarea>
       <mat-error *ngIf="invalidComment">Comentario inválido</mat-error>
     </mat-form-field>
 
-    <button type="submit" class="btn btn-primary mt-2 mb-2 btn-block">
-      Submit
+    <button type="submit" title="Enviar" class="btn btn-primary mt-2 mb-2 btn-block" style="width: fit-content;">
+      Enviar
     </button>
   </form>
 </article>

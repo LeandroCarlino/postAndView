@@ -9,12 +9,8 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Menu</mat-label>
-        <mat-select
-          [(ngModel)]="selectedOption"
-          (selectionChange)="onOptionSelected($event)"
-          [formControl]="selectControl"
-          disableRipple
-        >
+        <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionSelected($event)"
+          [formControl]="selectControl" disableRipple>
           <mat-option value="1">Inicio</mat-option>
           <mat-option value="2">Mi perfil</mat-option>
           <mat-option value="3">Información</mat-option>

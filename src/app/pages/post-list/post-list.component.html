@@ -31,10 +31,11 @@
         <mat-header-cell class="mat-header-cell" *matHeaderCellDef style="max-width: 15%">Acciones</mat-header-cell>
         <mat-cell *matCellDef="let element" style="max-width: 15%">
           <div>
-            <button mat-flat-button color="primary" class="action-button" [routerLink]="['/post-detail', element.id]">
+            <button type="button" title="Entrar" mat-flat-button color="primary" class="action-button"
+              [routerLink]="['/post-detail', element.id]">
               <mat-icon>keyboard_arrow_up</mat-icon>
             </button>
-            <button mat-flat-button color="warn" (click)="deletePost(element.id)">
+            <button type="button" title="Borrar" mat-flat-button color="warn" (click)="deletePost(element.id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>

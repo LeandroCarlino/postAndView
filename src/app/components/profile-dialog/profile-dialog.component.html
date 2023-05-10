@@ -13,6 +13,6 @@
     </div>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No, gracias</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    <button type="button" title="No" mat-button (click)="onNoClick()">No, gracias</button>
+    <button type="button" title="Si" mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
 </div>

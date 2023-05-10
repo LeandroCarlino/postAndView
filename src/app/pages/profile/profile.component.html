@@ -1,6 +1,6 @@
 <section class="profile-container">
   <div class="backButton">
-    <button type="button" class="btn btn-danger" [routerLink]="'/home'">
+    <button type="button" title="Volver" class="btn btn-danger" [routerLink]="'/home'">
       Volver
     </button>
   </div>
@@ -13,6 +13,6 @@
     <p>Correo: {{ mail || 'Desconocido' }}</p>
   </div>
   <div>
-    <button mat-raised-button (click)="openDialog()">Modificar perfil</button>
+    <button type="button" title="Modificar" mat-raised-button (click)="openDialog()">Modificar perfil</button>
   </div>
 </section>
