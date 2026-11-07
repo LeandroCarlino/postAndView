@@ -1,0 +1,91 @@
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--fondo) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.1rem;
+  flex-wrap: wrap;
+  padding-block: 0.6rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.marca__sigla {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 9px;
+  background: var(--acento);
+  color: var(--acento-ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.marca strong {
+  display: block;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+
+.marca small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mudo);
+}
+
+.cabecera nav {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.cabecera nav a {
+  padding: 0.42rem 0.8rem;
+  border-radius: 8px;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cabecera nav a:hover { background: var(--superficie-2); color: var(--tinta); }
+
+.cabecera nav a.activo {
+  background: var(--acento-suave);
+  color: var(--acento);
+}
+
+.pie {
+  border-top: 1px solid var(--linea);
+  background: var(--superficie);
+}
+
+.pie__interior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-block: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--mudo);
+}

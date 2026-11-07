@@ -1,0 +1,58 @@
+<header class="pagina__head">
+  <p class="kicker">Tus datos</p>
+  <h1>Perfil</h1>
+  <p class="lede">
+    Se guardan solo en este navegador (localStorage). No se envían a ningún servidor.
+  </p>
+</header>
+
+<form class="tarjeta" [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+  <div class="campo">
+    <label for="nombre">Nombre</label>
+    <input
+      id="nombre"
+      type="text"
+      formControlName="nombre"
+      placeholder="Tu nombre"
+      autocomplete="name"
+      [attr.aria-invalid]="invalido('nombre')"
+      aria-describedby="error-nombre"
+    >
+    @if (invalido('nombre')) {
+      <p class="error" id="error-nombre">Entre 3 y 40 caracteres.</p>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="mail">Correo</label>
+    <input
+      id="mail"
+      type="email"
+      formControlName="mail"
+      placeholder="nombre@ejemplo.com"
+      autocomplete="email"
+      [attr.aria-invalid]="invalido('mail')"
+      aria-describedby="error-mail"
+    >
+    @if (invalido('mail')) {
+      <p class="error" id="error-mail">Ingresá un correo válido.</p>
+    }
+  </div>
+
+  <button type="submit" class="boton">Guardar</button>
+
+  @if (guardado()) {
+    <p class="ok" role="status">Datos guardados en este navegador.</p>
+  }
+</form>
+
+@if (servicio.perfil().nombre) {
+  <section class="resumen" aria-labelledby="resumen-titulo">
+    <h2 id="resumen-titulo">Así te ven los comentarios</h2>
+    <p>
+      <strong>{{ servicio.perfil().nombre }}</strong>
+      <span>·</span>
+      <span>{{ servicio.perfil().mail }}</span>
+    </p>
+  </section>
+}

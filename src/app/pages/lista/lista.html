@@ -1,0 +1,96 @@
+<header class="pagina__head">
+  <p class="kicker">JSONPlaceholder</p>
+  <h1>Posts</h1>
+  <p class="lede">
+    Cien posts de ejemplo. Podés buscar en título y cuerpo, abrir el detalle con sus
+    comentarios o eliminar uno (queda recordado en este navegador).
+  </p>
+</header>
+
+<div class="barra">
+  <form class="buscador" role="search" (submit)="$event.preventDefault()">
+    <label class="sr-only" for="buscar">Buscar posts</label>
+    <svg class="buscador__icono" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5"></circle>
+      <path d="m16 16 4.5 4.5"></path>
+    </svg>
+    <input
+      id="buscar"
+      type="search"
+      [value]="busqueda()"
+      (input)="buscar($event)"
+      placeholder="Buscar por título o contenido…"
+      autocomplete="off"
+    >
+    @if (busqueda()) {
+      <button type="button" class="buscador__limpiar" (click)="limpiar()" aria-label="Limpiar búsqueda">×</button>
+    }
+  </form>
+</div>
+
+@if (posts.cargando()) {
+  <div class="tabla-envoltura" aria-hidden="true">
+    @for (i of [1,2,3,4,5,6,7,8]; track i) {
+      <div class="esqueleto"></div>
+    }
+  </div>
+  <p class="sr-only" role="status">Cargando posts…</p>
+} @else if (posts.error()) {
+  <p class="aviso aviso--error" role="alert">
+    No pudimos cargar los posts. Revisá la conexión y recargá la página.
+  </p>
+} @else {
+  <div class="resultado">
+    <p class="resultado__conteo" role="status">{{ rango() }}</p>
+    @if (ultimoBorrado(); as borrado) {
+      <div class="deshacer" role="status">
+        Eliminaste «{{ recortar(borrado.title, 28) }}»
+        <button type="button" (click)="deshacer()">Deshacer</button>
+      </div>
+    }
+  </div>
+
+  @if (paginaActual().length) {
+    <div class="tabla-envoltura">
+      <table class="tabla">
+        <caption class="sr-only">Lista de posts</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="col-id">#</th>
+            <th scope="col">Título</th>
+            <th scope="col" class="col-cuerpo">Contenido</th>
+            <th scope="col" class="col-acciones"><span class="sr-only">Acciones</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (post of paginaActual(); track post.id) {
+            <tr>
+              <td data-label="#" class="col-id">{{ post.id }}</td>
+              <td data-label="Título" class="col-titulo">
+                <a [routerLink]="['/post', post.id]">{{ recortar(post.title, 52) }}</a>
+              </td>
+              <td data-label="Contenido" class="col-cuerpo">{{ recortar(post.body, 90) }}</td>
+              <td class="col-acciones">
+                <button type="button" class="icono" (click)="eliminar(post)" [attr.aria-label]="'Eliminar el post ' + post.id" title="Eliminar">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    @if (totalPaginas() > 1) {
+      <nav class="paginacion" aria-label="Paginación">
+        <button type="button" (click)="ir(pagina() - 1)" [disabled]="pagina() === 1">Anterior</button>
+        <span>Página {{ pagina() }} de {{ totalPaginas() }}</span>
+        <button type="button" (click)="ir(pagina() + 1)" [disabled]="pagina() === totalPaginas()">Siguiente</button>
+      </nav>
+    }
+  } @else {
+    <p class="aviso">No hay posts que coincidan con «{{ busqueda() }}».</p>
+  }
+}

@@ -1,0 +1,33 @@
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__interior">
+    <a class="marca" routerLink="/">
+      <span class="marca__sigla" aria-hidden="true">P&V</span>
+      <span>
+        <strong>Posts &amp; Views</strong>
+        <small>demo sobre JSONPlaceholder</small>
+      </span>
+    </a>
+
+    <nav aria-label="Principal">
+      <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Posts</a>
+      <a routerLink="/perfil" routerLinkActive="activo">Perfil</a>
+      <a routerLink="/info" routerLinkActive="activo">Información</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" class="contenedor principal">
+  <router-outlet />
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__interior">
+    <span>© {{ anio }} Leandro Carlino</span>
+    <span>
+      Datos:
+      <a href="https://jsonplaceholder.typicode.com" target="_blank" rel="noopener">JSONPlaceholder</a>
+    </span>
+  </div>
+</footer>
